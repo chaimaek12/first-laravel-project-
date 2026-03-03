@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 Route::get('/', function () {
-    return view('welcome');
+    return view('students.create');
 });
 
 Route :: get ('/About',[AboutController::class,'index'])->name('about');

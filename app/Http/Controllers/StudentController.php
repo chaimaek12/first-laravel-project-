@@ -39,7 +39,14 @@ public function create()
 
         // return "Student Created Successfully";
 
-        Student::create($request->all());
+       $data = $request->all();
+$data['school'] = implode(',', $request->school);
+
+ 
+Student::create($data);
+
+return redirect('/')->with('success', 'Student created successfully!');
+//  bach nkhzen multiple choix fdatabase b format
 
         return redirect('/');
     }
