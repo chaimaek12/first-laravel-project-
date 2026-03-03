@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    <title>Mon Site</title>
+      @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
             <style>
@@ -14,13 +11,71 @@
         @endif
 </head>
 <body>
-   
-    @include('layouts.navbar')
-      <div>
-        
-          <p>my name is {{ $name }} </p>
-     </div>
-   @include('Layouts.footer')
 
+    {{-- <header>
+        <h1>Ma Navbar</h1>
+    </header>
+
+    <main>
+        @yield('content')
+    </main>
+
+    <footer>
+        <p>Mon Footer</p>
+    </footer> --}}
+<footer class="bg-blue-950 text-gray-300 pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+
+   
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4"> chamSchool</h2>
+      <p class="text-sm leading-relaxed">
+        Une école engagée pour l'excellence académique et le développement personnel.
+      </p>
+    </div>
+
+    
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Liens rapides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-yellow-400 ">Accueil</a></li>
+        <li><a href="#" class="hover:text-yellow-400">À propos</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Programmes</a></li>
+        <li><a href="#" class="hover:text-yellow-400 ">Contact</a></li>
+      </ul>
+    </div>
+
+    
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+      <ul class="space-y-2 text-sm">
+        <li>📍 casablanca, Maroc</li>
+        <li>📞 +212 6 00 00 00 00 </li>
+        <li>✉ contact@Chamschool.ma</li>
+      </ul>
+    </div>
+
+    
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Newsletter</h3>
+      <form class="flex flex-col space-y-3">
+        <input 
+          type="email" 
+          placeholder="Votre email"
+          class="px-4 py-2 rounded-lg text-black focus:outline-none"
+        />
+        <button class="bg-yellow-400 text-blue-900 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">
+          S'abonner
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+
+  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+    © 2026 EduSchool. Tous droits réservés.
+  </div>
+</footer>
 </body>
 </html>

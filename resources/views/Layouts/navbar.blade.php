@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
             <style>
@@ -14,13 +14,39 @@
         @endif
 </head>
 <body>
-   
-    @include('layouts.navbar')
-      <div>
-        
-          <p>my name is {{ $name }} </p>
-     </div>
-   @include('Layouts.footer')
+      <nav class="bg-blue-900 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center h-16">
+      
+ 
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl font-bold"> chamSchool</span>
+      </div>
 
+   
+      <div class="hidden md:flex space-x-8 font-medium">
+        <a href="#" class="hover:text-yellow-300 ">Accueil</a>
+        <a href="#" class="hover:text-yellow-300">À propos</a>
+        <a href="#" class="hover:text-yellow-300">Programmes</a>
+        <a href="#" class="hover:text-yellow-300 ">Événements</a>
+        <a href="#" class="hover:text-yellow-300">Contact</a>
+          <a href="{{ route('about') }}"   class="hover:text-yellow-300"> About </a>
+            <a href="{{ route('home') }}" class="hover:text-yellow-300"> home</a>
+      </div>
+
+   
+      <div class="">
+        <a href="#" class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 ">
+          S'inscrire
+        </a>
+      </div>
+
+     
+
+    </div>
+  </div>
+
+ 
+</nav>
 </body>
 </html>
