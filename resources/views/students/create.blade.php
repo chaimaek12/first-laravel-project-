@@ -25,6 +25,15 @@
         {{ session('success') }}
     </div>
 @endif
+@if($errors->any())
+    <div style="background-color: pink; padding:10px;">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <form method="POST" action="/register" class="space-y-5">
         @csrf
 

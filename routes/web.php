@@ -7,7 +7,7 @@ use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('students.create');
 });
-
+Route::view('/about', 'about');
 Route :: get ('/About',[AboutController::class,'index'])->name('about');
 Route::get('/home', [HomeController::class ,'index'] )->name('home');
 Route::get('/add-student', [StudentController::class, 'store']);

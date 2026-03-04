@@ -28,7 +28,7 @@ public function create()
             'gender' => 'required|in:Male,Female',
             'english_level' => 'required|numeric',
             'campus' => 'required',
-            'terms' => 'required|accepted',
+            'terms' => 'required|in:0,1',
         ]);
     //      $student = new Student();
     // $student->name = 'Ahmed';
@@ -44,10 +44,10 @@ $data['school'] = implode(',', $request->school);
 
  
 Student::create($data);
-
-return redirect('/')->with('success', 'Student created successfully!');
+return redirect('/about')->with('success', 'Student registered successfully!');
+// return back()->with('success', 'Student registered successfully!');
 //  bach nkhzen multiple choix fdatabase b format
 
-        return redirect('/');
+      
     }
 }
